@@ -15,10 +15,19 @@ module.exports = {
 },
 sucursal: (req,res)=>{
     let getSucursal = req.params.sucursal;
-    if(5 =!67){
-        res.write('No se ha encontrado la sucursal...');
+    if( archivo[getSucursal]){
+        let idSucursal = archivo[getSucursal];
+        let autos = idSucursal.autos.map((cadaElement)=>{
+            return ` <br>- Marca : ${cadaElement.marca} <br> 
+            -Modelo : ${cadaElement.modelo}<br>
+            -Año : ${cadaElement.anio}<br>
+            -Color : ${cadaElement.color} <br>`;
+        });
+        res.send(`Sucursal : ${idSucursal.sucursal} <br> Telefono : ${idSucursal.telefono}<br>Direccion : ${idSucursal.direccion} <br> Cantidad :  ${autos.length}<br>Autos : ${autos}`);
+    }else{
+        res.send('No se ha encontrado nada :(');
     }
-    res.end()
+    
 }
 
 
