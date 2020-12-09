@@ -7,7 +7,7 @@ module.exports = {
        archivo.forEach(element => { //extraigo datos y los agrego al nuevo array 
            sucursales.push({sucursal: element.sucursal,telefono:element.telefono, direccion : element.direccion});
        }); 
-       res.write('-----NUESTRAS SUCURSALES----- \n\n\n');
+       res.write('>>>>>>>>>> NUESTRAS SUCURSALES <<<<<<<<<<\n\n\n');
        sucursales.map((cadaElemento)=>{
            res.write(`Nombre : ${cadaElemento.sucursal}\nTelefono : ${cadaElemento.telefono}\nDireccion : ${cadaElemento.direccion}\n\n\n`);
        });

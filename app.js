@@ -9,3 +9,9 @@ app.use('/', rutaHome);
 
 const rutaSucursales = require('./routes/sucursales');
 app.use('/sucursales',rutaSucursales);
+
+const rutaMarcas = require('./routes/marcas');
+app.use('/marcas',rutaMarcas);
+
+const rutaAutos = require('./routes/autos');
+app.use('/autos',rutaAutos);
