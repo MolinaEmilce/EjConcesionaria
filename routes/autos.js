@@ -3,5 +3,9 @@ const router = express.Router();
 
 const controladorAutos = require('../controllers/autosController');
 router.get('/',controladorAutos.autos);
-router.get('/:marca',controladorAutos.idMarca);
+router.get('/:marca/:dato?',controladorAutos.idMarca);
+
+
+
+
 module.exports= router;
