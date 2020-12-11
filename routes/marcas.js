@@ -4,8 +4,8 @@ const router = express.Router();
 
 
 const controladorMarcas = require('../controllers/marcasController')
+router.get('/',controladorMarcas.marcas);
 router.get('/:marca',controladorMarcas.marca);
-router.get('/marcas',controladorMarcas.marcas);
 
 
 

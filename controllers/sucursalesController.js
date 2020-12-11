@@ -25,7 +25,7 @@ sucursal: (req,res)=>{
         });
         res.send(`Sucursal : ${idSucursal.sucursal} <br> Telefono : ${idSucursal.telefono}<br>Direccion : ${idSucursal.direccion} <br> Cantidad :  ${autos.length}<br>Autos : ${autos}`);
     }else{
-        res.send('No se ha encontrado nada :(');
+        res.send('No se ha encontrado nada :( , busque segun la posicion de la sucursal');
     }
     
 }

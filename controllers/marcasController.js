@@ -1,5 +1,6 @@
 const fs = require('fs');
 const archivo = JSON.parse(fs.readFileSync('./data/concesionarias.json','utf-8'));
+
 module.exports = {
     marca : (req,res)=>{
         res.write('>>>>>>>>>> MARCAS <<<<<<<<<<\n\n\n');
@@ -31,6 +32,37 @@ module.exports = {
     res.end();
 },
 marcas : (req,res)=>{
-  
-}
+    res.write('>>>>>>>>>> NUESTRAS MARCAS <<<<<<<<<<\n\n\n');
+        let autos = []; //agregamos todas las marcas de los autos 
+
+        /*Recorremos el json en cad aposicion, dentro de ella iteramos otra vez pero solo filtramos lo que hay dentro del bloque */
+        archivo.forEach(cadaElemento=>{
+            cadaElemento.autos.filter(cadaAuto=>{
+                //si en la variable autos se encuentra el nombre de la marca retorna falso o verdadero
+                let resultado = autos.includes(cadaAuto.marca);
+                if(resultado==false){ //si no existe (es decir si es false) esa marca en la variable AUTOS que la agregue
+                    return autos.push(cadaAuto.marca);
+                }
+            });
+        });   
+        
+        
+            res.write(`Marcas con las que nos manejamos : ${autos.join(' - ')}`);
+    
+    
+    
+
+        res.end()
+
+
+
+    }
+
+
+
+
+
+
+
+
 }
